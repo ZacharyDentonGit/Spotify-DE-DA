@@ -59,6 +59,12 @@ def get_playlist_data(spotify_client, album_id):
         playlist_data = get_playlist_data(spotify_client, playlist['id'])
         playlist_data_list.append(playlist_data)
     return get_playlist_data
+    
+# Call the functions to populate the data lists
+get_album_data(spotify_client, album_id)
+get_artist_data(spotify_client, album_id)
+get_track_data(spotify_client, album_id)
+get_playlist_data(spotify_client, album_id)
 
 # Create DataFrames from the lists
 album_df = pd.DataFrame(album_data_list)
